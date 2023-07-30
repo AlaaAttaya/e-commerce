@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('category', 70);
             $table->float('price', 8, 2);
             $table->integer('quantity');
-            $table->longText('image');
+            $table->string('image');
             $table->timestamps();
         });
     }

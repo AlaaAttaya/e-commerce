@@ -4,8 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
-///write what u want to use here :D
-///use App\Http\Controllers\HayalaController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\CartController;
+
 
 
 
@@ -38,13 +40,52 @@ Route::group([
 });
 
 
+
 Route::group([
     'middleware' => 'api',
     'prefix' => 'roles'
 ], function ($router) {
-  
     Route::post('/store', [RoleController::class, 'store']);
+    Route::post('/show/{id}', [RoleController::class, 'show']);
+    Route::post('/update/{id}', [RoleController::class, 'update']);
+    Route::post('/destroy/{id}', [RoleController::class, 'destroy']);
 });
 
 
 
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'products'
+], function ($router) {
+  
+    Route::post('/', [ProductController::class, 'index']);
+    Route::post('/store', [ProductController::class, 'store']);
+    Route::post('/show/{id}', [ProductController::class, 'show']);
+    Route::post('/update/{id}', [ProductController::class, 'update']);
+    Route::post('/destroy/{id}', [ProductController::class, 'destroy']);
+});
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'favorite'
+], function ($router) {
+    Route::post('/', [CartController::class, 'index']);
+    Route::post('/store', [FavoriteController::class, 'store']);
+    Route::post('/destroy/{id}', [FavoriteController::class, 'destroy']);
+});
+
+
+
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'cart'
+], function ($router) {
+    Route::post('/', [CartController::class, 'index']);
+    Route::post('/store', [CartController::class, 'store']);
+    Route::post('/update/{id}', [CartController::class, 'update']);
+    Route::post('/destroy/{id}', [CartController::class, 'destroy']);
+});
