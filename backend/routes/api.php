@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
 ///write what u want to use here :D
 ///use App\Http\Controllers\HayalaController;
 
@@ -24,17 +25,26 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/refresh', [AuthController::class, 'refresh']);
+    Route::get('/user-profile', [AuthController::class, 'userProfile']); 
+    
+});
 
 
-// Route::group(["prefix" => "v0.0.1"], function(){
-//     Route::group(["prefix" => "buyer"], function(){
-//         Route::get('/', [HayalaController::class, "test"]);
-//         Route::get('/trust_issues', [HayalaController::class, "issuesV01"]);
-//         Route::get('/third', [HayalaController::class, "third"]);
-//     });
-//     Route::group(["prefix" => "seller"], function(){
-//         Route::get('/', [HayalaController::class, "test"]);
-//         Route::get('/trust_issues', [HayalaController::class, "issuesV01"]);
-//         Route::get('/third', [HayalaController::class, "third"]);
-//     });
-// });
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'roles'
+], function ($router) {
+  
+    Route::post('/store', [RoleController::class, 'store']);
+});
+
+
+
