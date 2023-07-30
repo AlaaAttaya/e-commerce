@@ -16,7 +16,10 @@
     float:left;
 }
 #logo-image{
-    width:200px;
+    width:250px;
+}
+#add-logo-image{
+    width:250px;
 }
 a{
     text-decoration: none !important;
@@ -91,7 +94,15 @@ a:hover{
 
 
 
-
+.add-product-image-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; 
+    max-width: 300px; 
+    border-bottom: 2px solid rgb(5, 49, 38);
+}
 
 
 .product-container {
@@ -117,7 +128,8 @@ a:hover{
     position: absolute;
     bottom: 0;
     left: 0;
-   
+    width: 100%;
+    justify-content: center;
     background-color: #f2f2f2;
     padding: 10px;
     border-radius: 0 0 8px 8px;
@@ -148,6 +160,36 @@ a:hover{
     background-color:  #053138;
   }
   
+
+  .delete-btn{
+    background-color:  #ff1a05;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+  }
+  .delete-btn:hover{
+    background-color:  #a91407;
+  }
+
+  .add-product{
+    background-color:  #146c7b;
+    
+    color: #fff;
+    border: none;
+    padding: 19px 19px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+.add-product:hover{
+    background-color:  #053138;
+  }
+
   .product-price {
     font-size: 14px;
     font-weight: bold;
@@ -192,8 +234,54 @@ a:hover{
     transition: opacity 0.3s;
   }
   
+  .show-add{
+    display: none;
+    justify-content:center;
+    flex-wrap: wrap;
+    
+  }
+  .show-edit{
+    display: none;
+    justify-content:center;
+    flex-wrap: wrap;
+    
+  }
+  .image-container{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .info-wrapper{
+    display: flex;
+    flex-direction: column;
+    
+    border-bottom: 2px solid rgb(5, 49, 38);
+  }
+
+.save-btn{
+    background-color:  #146c7b;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:5px;
+    color:white;
+    cursor:pointer;
+    
+}
+.save-btn:hover{
+    background-color: #053138;
+}
   
 
+.title-show{
+    text-align: center;
+    font-size:40px;
+    color: #146c7b;
+    font-weight: bolder;
+}
   @media screen and (max-width: 1000px) {
     .img-anchor::before {
         content: 'FurniQuest!'; 

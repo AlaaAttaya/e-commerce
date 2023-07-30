@@ -1,0 +1,226 @@
+.nav-bar {
+    border-bottom:2px solid rgb(5, 49, 38);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+.anchors {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 300px;
+}
+.left-image {
+    float:left;
+}
+#logo-image{
+    width:200px;
+}
+a{
+    text-decoration: none !important;
+    color:rgb(7, 4, 85);
+
+}
+a:hover{
+  background-color: #146c7b; 
+  padding: 20px;
+  text-decoration: none;
+  color:white;
+}
+
+.padding-left{
+    padding-left: 30px;
+}
+
+.img-anchor{
+    text-decoration: none !important;
+}
+
+.img-anchor::before {
+    content: 'FurniQuest!'; 
+    position: absolute; 
+    top: 12%; 
+    left: 42%; 
+    transform: translate(-50%, -50%);
+    color: #ffffff; 
+    font-size: 20px;
+    opacity: 0; 
+  }
+  
+  
+  .img-anchor:hover::before {
+    opacity: 1; 
+  }
+  .searchbar-wrapper{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+ .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 7px 10px rgba(1, 43, 19, 0.293);
+  width:40%;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  padding:5px;
+}
+
+
+.magnifying-glass {
+  width: 30px;
+  height: 30px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+.product-container {
+    position: relative;
+    display: inline-block;
+    width: fit-content; 
+    max-width: 300px; 
+  }
+  
+  .product-image-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .product-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    gap:7px;
+    align-items: center;
+  }
+  
+  .product-buttons {
+    display: flex;
+    gap: 10px; 
+  }
+  
+  .add-to-cart-btn,
+  .add-to-favorites-btn {
+    background-color:  #146c7b;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+  }
+  
+  .add-to-cart-btn:hover,
+  .add-to-favorites-btn:hover {
+    background-color:  #053138;
+  }
+  
+  .product-price {
+    font-size: 14px;
+    font-weight: bold;
+   
+  }
+  
+
+.Products{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+#quantity-cart {
+    width:50px;
+    color:black;
+    font-weight: bold;
+    }
+
+  .product-description {
+    position: absolute;
+    bottom: 100%;
+    left:0;
+    width: 95%;
+    height: 100%; 
+    background-color:  hsla(189, 72%, 28%, 0.843);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  
+  .product-container:hover .product-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+  }
+  
+  
+
+  .total-wrapper{
+    
+    display: flex;
+    width: 45%;
+    justify-content: flex-end;
+  }
+  #Total{
+    font-size:30px;
+    font-weight: bold;
+    color:#053138;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .img-anchor::before {
+        content: 'FurniQuest!'; 
+        position: absolute; 
+        top: 14%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: #ffffff; 
+        font-size: 20px;
+        opacity: 0; 
+    }
+    
+  }

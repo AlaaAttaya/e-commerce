@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>FurniQuest-Admin</title>
+         <link rel="shortcut icon" href="../../assets/images/FurniQuest.png" />
+         <link rel="stylesheet" href="../css/admin.css" />
+    </head>
+
+
+<body>
+    <div class="nav-bar">
+        <div class="left-image" > <a href="./home.html" class="img-anchor" > <img src="../../assets/images/FurniQuest.png" id="logo-image" > </a></div>
+        <div class="anchors">
+            <div><a class="nav-bar-anchor" href="./home.html" id="home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> 
+                <title>Home</title>
+                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> </svg></a></div>
+            
+            <div><a class="nav-bar-anchor" href="./favorites.html" id="favorites">
+                
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+            <title>Favorites</title>
+             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/> </svg>
+        </a></div>
+            <div>
+                <a class="nav-bar-anchor" href="./cart.html" id="cart">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                    <title>Cart</title>
+                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> 
+                </svg>
+                </a>
+            </div>
+           
+            
+                <div><a class="nav-bar-anchor padding-left" id="logout" href="#">Logout</a></div>
+                <div class="admin-wrapper "><a class="nav-bar-anchor, admin" id="admin" href="../views/admin.html">Admin</a></div> 
+              
+            
+        </div>
+      
+    
+    </div>
+    <div class="searchbar-wrapper">
+        
+        <div class="search-bar">
+           
+            <input type="text" placeholder="Search..."  class="search-input"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="magnifying-glass">
+                <rect width="256" height="256" fill="none"/>
+                <circle cx="116" cy="116" r="84" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+                <line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+              </svg>
+          </div>
+        <div class="add-product-div">
+            <button class="add-product" id="add-product-btn">Add</button>
+
+        </div>
+    </div>
+    <div class="show-add" id="show-hide-add">
+        <div class="add-product-image-container">
+            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" class="add-logo-image">
+        </div>
+        <div class="info-wrapper">
+            <Label class="title-show">Add</Label>
+            <label for="product-name">Name</label>
+            <input type="text" placeholder="Enter product name" id="product-name">
+            <label for="product-category">Category</label>
+            <input type="text" placeholder="Enter product category" id="product-category">
+            <label for="product-description">Description</label>
+            <textarea id="product-description"  rows="4" cols="50" placeholder="Enter product description"></textarea>
+            <label for="product-quantity">Quantity</label>
+            <input type="number" placeholder="Enter product quantity">
+            <label for="product-price">Price</label>
+            <input type="number" placeholder="Enter product price" min="0.01" step="0.01" />
+            <button class="save-btn" id="savebtn">Save</button>
+        </div>
+        
+   
+       
+    </div>
+    <div class="show-edit" id="show-hide-edit">
+        
+        <div class="add-product-image-container">
+            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" class="add-logo-image">
+        </div>
+        <div class="info-wrapper">
+            <Label class="title-show">Edit</Label>
+            <label for="product-name">Name</label>
+            <input type="text" placeholder="Enter product name" id="product-name">
+            <label for="product-category">Category</label>
+            <input type="text" placeholder="Enter product category" id="product-category">
+            <label for="product-description">Description</label>
+            <textarea id="product-description"  rows="4" cols="50" placeholder="Enter product description"></textarea>
+            <label for="product-quantity">Quantity</label>
+            <input type="number" placeholder="Enter product quantity">
+            <label for="product-price">Price</label>
+            <input type="number" placeholder="Enter product price" min="0.01" step="0.01" />
+            <button class="save-btn" id="savebtn">Save</button>
+        </div>
+
+    </div>
+    <div class="Products">
+        <div class="product-container">
+            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" >
+            <div class="product-details">
+              <div class="product-buttons">
+                <button class="add-to-cart-btn edit-button">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </div>
+              
+              <div class="product-description">Product description </div>
+            </div>
+          </div>
+        </div>
+          <script src="../js/admin.js"></script>
+</body>
+</html>

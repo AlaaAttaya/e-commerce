@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-         <title>FurniQuest-Cart</title>
+         <title>FurniQuest-Home</title>
          <link rel="shortcut icon" href="../../assets/images/FurniQuest.png" />
-         <link rel="stylesheet" href="../css/cart.css" />
+         <link rel="stylesheet" href="../css/home.css" />
     </head>
 
 
@@ -43,25 +43,30 @@
     
     </div>
     <div class="searchbar-wrapper">
-        <div class="total-wrapper">
-            <div class="total-div"><label id="Total">Total:</label></div>
-        </div>
         
+        <div class="search-bar">
            
-  
+            <input type="text" placeholder="Search..."  class="search-input"/>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="magnifying-glass">
+                <rect width="256" height="256" fill="none"/>
+                <circle cx="116" cy="116" r="84" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+                <line x1="175.4" y1="175.4" x2="224" y2="224" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
+              </svg>
+          </div>
+          
     </div>
+    <div class="Product-categories">
 
+    </div>
     <div class="Products">
         <div class="product-container">
             <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" >
             <div class="product-details">
-            
-              <div class="product-quantity"><input type="number" title="Quantity" placeholder="Qty" id="quantity-cart"></div>
-              <div class="product-price">$29.99</div>
               <div class="product-buttons">
-                
-                <button class="add-to-favorites-btn">Remove</button>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="add-to-favorites-btn">Add to Favorites</button>
               </div>
+              <div class="product-price">$29.99</div>
               <div class="product-description">Product description </div>
             </div>
           </div>

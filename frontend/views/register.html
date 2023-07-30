@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>FurniQuest-Register</title>
+     <link rel="shortcut icon" href="../../assets/images/FurniQuest.png" />
+     <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <div class="main">
+     
+
+      <div class="logo">
+        <img src="../../assets/images/FurniQuest.png" alt="logo" class="logo-img" />
+      </div>
+      <h1 class="heading">
+        <div class="h_main">Register</div>
+       
+      </h1>
+
+      <div class="slide-content">
+        <div class="content1">
+          <form action="">
+            <div class="input-group">
+                <label class="field-label email-label" for="first_name" name="email">First Name</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  placeholder="Enter first name"
+                  class="field"
+                />
+                <label class="field-label email-label" for="last_name" name="email">Last Name</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  placeholder="Enter last name"
+                  class="field"
+                />
+            </div>
+            <div class="input-group">
+              <label class="field-label email-label" for="email" name="email"
+                >Email</label
+              >
+              <input
+                type="email"
+                class="field email-field"
+                id="email"
+                placeholder="JohnDoe@gmail.com"
+              />
+            </div>
+            <div class="input-group">
+              <label class="field-label password-label" for="password"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="field password-field"
+                id="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="input-group">
+                <label class="field-label password-label" for="password"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  class="field password-field"
+                  id="confirm_password"
+                  placeholder="Confirm password"
+                />
+              </div>
+              <div id="suggestions" class="text-red">
+                
+              </div>
+            <div class="create-next">
+                <span><a href="../../index.html">Login instead</a></span>
+              <button class="btn pointer" id="next" type="submit" name="email_submit">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

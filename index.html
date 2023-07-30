@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>FurniQuest-Login</title>
+     <link rel="shortcut icon" href="assets/images/FurniQuest.png" />
+     <link rel="stylesheet" href="./frontend/css/signin.css" />
+  </head>
+  <body>
+    <div class="main">
+     
+
+      <div class="logo">
+        <img src="assets/images/FurniQuest.png" alt="logo" class="logo-img" />
+      </div>
+      <h1 class="heading">
+        <div class="h_main">Sign in</div>
+       
+      </h1>
+
+      <div class="slide-content">
+        <div class="content1">
+          <form action="">
+            <div class="input-group">
+              <label class="field-label email-label" for="email" name="email"
+                >Email</label
+              >
+              <input
+                type="email"
+                class="field email-field"
+                id="email"
+                placeholder="JohnDoe@gmail.com"
+              />
+            </div>
+            <div class="input-group">
+              <label class="field-label password-label" for="password"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="field password-field"
+                id="password"
+                placeholder="Enter password"
+              />
+            </div>
+            <div class="create-next">
+              <span><a href="./frontend/views/register.html">Create account</a></span>
+              <button class="btn pointer" id="next" type="submit" name="email_submit">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../js/signin.js"></script>
+  </body>
+</html>
