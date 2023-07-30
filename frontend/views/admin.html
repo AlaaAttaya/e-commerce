@@ -46,7 +46,7 @@
         
         <div class="search-bar">
            
-            <input type="text" placeholder="Search..."  class="search-input"/>
+            <input type="text" placeholder="Search..."  class="search-input" id="search-onkeyup"/>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="magnifying-glass">
                 <rect width="256" height="256" fill="none"/>
                 <circle cx="116" cy="116" r="84" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
@@ -60,7 +60,13 @@
     </div>
     <div class="show-add" id="show-hide-add">
         <div class="add-product-image-container">
-            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" class="add-logo-image">
+            
+            <label for="imageInput" id="imagePreviewLabel" class="add-logo-image product-image">
+              <div id="imagePreview"></div>
+            </label>
+           
+            <input type="file" id="imageInput" accept="image/*" style="display: none"/>
+            
         </div>
         <div class="info-wrapper">
             <Label class="title-show">Add</Label>
@@ -83,7 +89,13 @@
     <div class="show-edit" id="show-hide-edit">
         
         <div class="add-product-image-container">
-            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" class="add-logo-image">
+            
+            <label for="imageInput-edit" id="imagePreviewLabel-edit" class="add-logo-image product-image">
+              <div id="imagePreview-edit"></div>
+            </label>
+           
+            <input type="file" id="imageInput-edit" accept="image/*" style="display: none"/>
+            
         </div>
         <div class="info-wrapper">
             <Label class="title-show">Edit</Label>

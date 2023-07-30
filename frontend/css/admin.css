@@ -282,6 +282,85 @@ a:hover{
     color: #146c7b;
     font-weight: bolder;
 }
+
+
+
+
+
+#imagePreview {
+  background-image: url("../../assets/images/FurniQuest.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+  height: 200px;
+  
+}
+
+
+#imagePreviewLabel::before {
+  content: 'Upload'; 
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #ffffff;
+  background-color:  #146c7b;
+  padding: 4px 8px;
+  border-radius: 4px; 
+  opacity: 0; 
+  cursor:pointer;
+}
+
+#imagePreviewLabel:hover::before {
+  opacity: 1; 
+}
+
+
+
+
+
+
+
+
+#imagePreview-edit {
+  background-image: url("../../assets/images/FurniQuest.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+  height: 200px;
+  
+}
+
+
+#imagePreviewLabel-edit::before {
+  content: 'Upload'; 
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #ffffff;
+  background-color:  #146c7b;
+  padding: 4px 8px;
+  border-radius: 4px; 
+  opacity: 0; 
+  cursor:pointer;
+}
+
+#imagePreviewLabel-edit:hover::before {
+  opacity: 1; 
+}
+
+
+
+
+
+
+
+
+
+
   @media screen and (max-width: 1000px) {
     .img-anchor::before {
         content: 'FurniQuest!'; 
