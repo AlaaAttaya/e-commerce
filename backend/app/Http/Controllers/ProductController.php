@@ -33,6 +33,9 @@ class ProductController extends Controller
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('public/images');
         $productData['image'] = "/storage/".str_replace('public/', '', $imagePath);
+    }else {
+        
+        $productData['image'] = '../../storage/images/FurniQuest.png';
     }
 
     $product = Product::create($productData);

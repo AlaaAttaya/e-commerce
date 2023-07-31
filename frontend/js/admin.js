@@ -49,10 +49,14 @@ document.getElementById('imageInput').addEventListener('change', function(event)
 
     product_list.innerHTML = "";
     product_array.forEach((product) => {
-        
+        if(product.image==""||product.image==" "){
+            imagepath = "";
+        }else{
+            imagepath = product.image;
+        }
         product_list.innerHTML += `
         <div class="product-container">
-        <img src="http://127.0.0.1:8000//${product.image}" alt="Product Image" class="product-image" >
+        <img src="http://127.0.0.1:8000//${imagepath}" alt="Product Image" class="product-image" >
         <div class="product-details">
         <div>
         Name: ${product.name}
@@ -63,7 +67,7 @@ document.getElementById('imageInput').addEventListener('change', function(event)
         </div>
           <div class="product-buttons">
             <button class="add-to-cart-btn edit-button" value="${product.id}">Edit </button>
-            <button class="delete-btn">Delete</button>
+            <button class="delete-btn" value="${product.id}">Delete</button>
           </div>
           
           <div class="product-description">Description: <br>${product.description}<br> Category:<br>${product.category} </div>
@@ -245,51 +249,82 @@ for (var i = 0; i < editproduct.length; i++) {
 
 
 
+const deletebtn = document.getElementsByClassName("delete-btn");
+for (var i = 0; i < deletebtn.length; i++) {
+    deletebtn[i].addEventListener("click", function(e){
+        e.preventDefault();
+        const product_id = this.value;
+        console.log(product_id)
+        let formdata = new FormData();
+        
 
+            let requestOptions = {
+                method: 'POST',
+                body: formdata
+            };
+
+            try {
+                fetch(base_url + "/products/destroy/"+product_id, requestOptions)
+                window.location.reload(true);
+            }
+            catch (e) {
+                console.log("failed to fetch", e)
+            }
+    }
+    )
+}
+//adding product
+const saveaddbtn = document.getElementById("savebtn")
+    saveaddbtn.addEventListener("click",function(e){
+     e.preventDefault();
+     console.log("SaveAddButton");
+     const name= document.getElementById('product-name').value
+     const category= document.getElementById('product-category').value
+     const description= document.getElementById('product-description').value
+     const quantity= parseInt(document.getElementById('product-quantity').value)
+     const price= parseFloat(document.getElementById('product-price').value)
+     let imageFile = document.getElementById('imageInput').files[0];
+    
+     const formData = new FormData()
+     formData.append('name', name);
+     formData.append('category', category);
+     formData.append('description', description);
+     formData.append('quantity', quantity);
+     formData.append('price', price);
+ 
+ 
+     console.log(name);
+     console.log(category);
+     console.log(description);
+      console.log(quantity);
+      console.log(price);
+      console.log(imageFile);
+     if (imageFile) {
+         formData.append('image', imageFile);
+     } 
+
+     let requestOptions = {
+        method: 'POST',
+        body: formData
+    };
+
+    try {
+        fetch(base_url+"/products/store/", requestOptions)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data)
+        window.location.reload(true);
+    })
+    }
+    catch (e) {
+        console.log("failed to fetch", e)
+    }
+
+    })
 
 
 
 }
-
-
-
-
-
-
-
-
-
-
-  //ADD an item//
-  //const fileInput = document.getElementById("imageInput");
-    // if (fileInput.files.length > 0) {
-    // const file = fileInput.files[0]; 
-
-    // console.log("File name:", file.name);
-    // console.log("File type:", file.type);
-    // console.log("File size (in bytes):", file.size);
-
-    
-
-      
-    //   if (fileInput.files.length === 0) {
-       
-    //     return;
-    //   }
-    
-      
-    //   const formData = new FormData();
-    
-      
-    //   formData.append("file", fileInput.files[0]);
-
-
-
-
-
-
-
-
 
 
 
@@ -300,12 +335,10 @@ for (var i = 0; i < editproduct.length; i++) {
     myInput.addEventListener('keyup', function() {
     let keyupvalue = myInput.value;
     console.log(keyupvalue);
-    
 
    
    
     });
-
 
 
     ///logout
