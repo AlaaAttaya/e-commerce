@@ -334,10 +334,104 @@ const saveaddbtn = document.getElementById("savebtn")
     const myInput = document.getElementById('search-onkeyup');
     myInput.addEventListener('keyup', function() {
     let keyupvalue = myInput.value;
-    console.log(keyupvalue);
+    const categoryradio = document.getElementById('categoryradio');
+    
+    let formdata = new FormData();
+   if(categoryradio.checked){
+    if(keyupvalue == "" || keyupvalue == " "){
+        let formdata = new FormData();
+   
 
+        let requestOptions = {
+            method: 'POST',
+            body: formdata
+        };
+    
+        try {
+            fetch(base_url + "/products", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+            console.log(data)
+            displayProducts(data)
+        })
+        }
+        catch (e) {
+            console.log("failed to fetch", e)
+        }
+    }else{
+        
+    
+    let requestOptions = {
+        method: 'POST',
+        body: formdata
+    };
+
+    try {
+        const products = fetch(base_url + "/products/onkeyupcategory/"+keyupvalue, requestOptions)
+       
+        .then(response => response.json())
+        .then(data => {
+        console.log(data)
+        displayProducts(data)
+    })
+        
+    }
+    catch (e) {
+        console.log("failed to fetch", e)
+    }
+    
+}
+   }else{
+
+
+
+
+    if(keyupvalue == "" || keyupvalue == " "){
+        let formdata = new FormData();
    
-   
+
+        let requestOptions = {
+            method: 'POST',
+            body: formdata
+        };
+    
+        try {
+            fetch(base_url + "/products", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+            console.log(data)
+            displayProducts(data)
+        })
+        }
+        catch (e) {
+            console.log("failed to fetch", e)
+        }
+    }else{
+        
+    
+    let requestOptions = {
+        method: 'POST',
+        body: formdata
+    };
+
+    try {
+        const products = fetch(base_url + "/products/onkeyupname/"+keyupvalue, requestOptions)
+       
+        .then(response => response.json())
+        .then(data => {
+        console.log(data)
+        displayProducts(data)
+    })
+        
+    }
+    catch (e) {
+        console.log("failed to fetch", e)
+    }
+    
+}
+
+   }
+  
     });
 
 

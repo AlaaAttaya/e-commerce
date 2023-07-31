@@ -102,4 +102,23 @@ class ProductController extends Controller
 
         return response()->json(null, 204);
     }
+
+
+
+    public function onkeyUpname($name)
+    {
+       
+        $namecheck = $name;
+        $products = Product::where('name', 'LIKE', $namecheck . '%')->get();
+        return response()->json($products);
+    }
+
+    public function onkeyUpcategory($name)
+    {
+       
+        $category = $name;
+        $products = Product::where('category', 'LIKE', $category . '%')->get();
+        return response()->json($products);
+    }
+
 }

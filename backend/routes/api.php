@@ -60,6 +60,8 @@ Route::group([
     Route::post('/show/{id}', [ProductController::class, 'show']);
     Route::post('/update/{id}', [ProductController::class, 'update']);
     Route::post('/destroy/{id}', [ProductController::class, 'destroy']);
+    Route::post('/onkeyupname/{name}', [ProductController::class, 'onkeyUpname']);
+    Route::post('/onkeyupcategory/{name}', [ProductController::class, 'onkeyUpcategory']);
 });
 
 
