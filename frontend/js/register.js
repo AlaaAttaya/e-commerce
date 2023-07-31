@@ -1,15 +1,26 @@
+const base_url = "http://127.0.0.1:8000/api"
+
 if(localStorage.getItem("user_id")){
-  if(localStorage.getItem("user_id")==31){
-    window.location.replace("./frontend/views/admin.html")
+  const user_id = localStorage.getItem("user_id")
+  const formData1= new FormData();
+  fetch(base_url + '/roles/show/'+user_id, {
+    method: "POST",
+    body: formData1
+  })
+  .then(response1 => response1.json())
+  .then(data2 => {
+    check_title = data2.title;
+    if(check_title == "admin"){
+    window.location.replace("../views/admin.html")
   }else{
-    window.location.replace("./frontend/views/home.html")
+    window.location.replace("../views/home.html")
   }
     
-  }
+  })}
 const register = document.getElementById("next");
 
 
-const base_url = "http://127.0.0.1:8000/api"
+
 
 register.addEventListener("click", function(e) {
   e.preventDefault();

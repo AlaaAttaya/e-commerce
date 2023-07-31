@@ -15,7 +15,7 @@ class CartController extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
         $request->validate([
             'user_id' => 'required|integer|exists:users,id',
             'product_id' => 'required|integer|exists:products,id',
@@ -24,6 +24,7 @@ class CartController extends Controller
 
         $cartItem = Cart::create($request->all());
         return response()->json($cartItem, 201);
+       
     }
 
     public function update(Request $request, $id)

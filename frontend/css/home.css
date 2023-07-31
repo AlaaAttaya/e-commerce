@@ -101,6 +101,7 @@ a:hover{
     display: inline-block;
     width: fit-content; 
     max-width: 300px; 
+    margin: 10px;
   }
   
   .product-image-container {

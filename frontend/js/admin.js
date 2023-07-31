@@ -1,7 +1,27 @@
-if(!localStorage.getItem("user_id") || localStorage.getItem("user_id")!=31){
+
+const base_url = "http://127.0.0.1:8000/api";
+if(localStorage.getItem("user_id")){
+  const user_id = localStorage.getItem("user_id")
+  const formData1= new FormData();
+  fetch(base_url + '/roles/show/'+user_id, {
+    method: "POST",
+    body: formData1
+  })
+  .then(response1 => response1.json())
+  .then(data2 => {
+    check_title = data2.title;
+    if(check_title == "admin"){
+    
+  }else{
     window.location.replace("../../index.html")
   }
-const base_url = "http://127.0.0.1:8000/api";
+    
+  })}else{
+    window.location.replace("../../index.html")
+  }
+
+
+
 const addproduct = document.getElementById("add-product-btn");
 const showaddproduct = document.getElementById("show-hide-add");
 
@@ -367,7 +387,7 @@ const saveaddbtn = document.getElementById("savebtn")
     };
 
     try {
-        const products = fetch(base_url + "/products/onkeyupcategory/"+keyupvalue, requestOptions)
+        fetch(base_url + "/products/onkeyupcategory/"+keyupvalue, requestOptions)
        
         .then(response => response.json())
         .then(data => {
@@ -415,7 +435,7 @@ const saveaddbtn = document.getElementById("savebtn")
     };
 
     try {
-        const products = fetch(base_url + "/products/onkeyupname/"+keyupvalue, requestOptions)
+         fetch(base_url + "/products/onkeyupname/"+keyupvalue, requestOptions)
        
         .then(response => response.json())
         .then(data => {

@@ -45,8 +45,11 @@
     <div class="searchbar-wrapper">
         
         <div class="search-bar">
-           
-            <input type="text" placeholder="Search..."  class="search-input"/>
+            <label for="categoryRadio">Category</label>
+            <input type="radio" id="categoryradio" name="searchby" value="searchcategory" checked>
+            <label for="nameRadio">Name</label>
+            <input type="radio" id="nameradio" name="searchby" value="searchname">
+            <input type="text" placeholder="Search..."  class="search-input" id="search-onkeyup"/>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="magnifying-glass">
                 <rect width="256" height="256" fill="none"/>
                 <circle cx="116" cy="116" r="84" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
@@ -58,19 +61,8 @@
     <div class="Product-categories">
 
     </div>
-    <div class="Products">
-        <div class="product-container">
-            <img src="../../assets/images/FurniQuest.png" alt="Product Image" class="product-image" >
-            <div class="product-details">
-              <div class="product-buttons">
-                <button class="add-to-cart-btn">Add to Cart</button>
-                <button class="add-to-favorites-btn">Add to Favorites</button>
-              </div>
-              <div class="product-price">$29.99</div>
-              <div class="product-description">Product description </div>
-            </div>
-          </div>
-          
+    <div class="Products" id="products">
+   
           
           
     </div>
