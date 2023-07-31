@@ -1,5 +1,10 @@
 if(localStorage.getItem("user_id")){
+  if(localStorage.getItem("user_id")==31){
+    window.location.replace("./frontend/views/admin.html")
+  }else{
     window.location.replace("./frontend/views/home.html")
+  }
+    
   }
 //signin
 const next = document.getElementById("next");

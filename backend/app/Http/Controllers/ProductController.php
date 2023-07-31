@@ -60,7 +60,7 @@ class ProductController extends Controller
             'category' => 'required|string|max:70',
             'price' => 'required|numeric',
             'quantity' => 'required|integer',
-            'image' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,ico,image/vnd.microsoft.icon|max:2048',
         ]);
 
         $product = Product::find($id);
@@ -69,7 +69,20 @@ class ProductController extends Controller
             return response()->json(['message' => 'Product not found'], 404);
         }
 
-        $product->update($request->all());
+        if (is_string($request->input('image')) && $request->input('image') === 'dontchange') {
+            $request->request->remove('image');
+        }elseif ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images');
+            $product->image = "/storage/" . str_replace('public/', '', $imagePath);
+        }
+
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->category = $request->input('category');
+        $product->price = $request->input('price');
+        $product->quantity = $request->input('quantity');
+    
+        $product->save();
 
         return response()->json($product, 200);
     }

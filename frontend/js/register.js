@@ -1,8 +1,11 @@
-
 if(localStorage.getItem("user_id")){
-  window.location.replace("../views/home.html")
-}
-
+  if(localStorage.getItem("user_id")==31){
+    window.location.replace("./frontend/views/admin.html")
+  }else{
+    window.location.replace("./frontend/views/home.html")
+  }
+    
+  }
 const register = document.getElementById("next");
 
 
