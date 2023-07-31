@@ -227,7 +227,9 @@ a {
     cursor: pointer;
 }
 
-
+.text-red{
+    color:rgb(255, 0, 0);
+   }
 
 @media screen and (max-width: 1000px) {
     .main{

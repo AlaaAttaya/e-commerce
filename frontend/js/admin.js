@@ -1,4 +1,4 @@
-if(!localStorage.getItem("user_id")){
+if(!localStorage.getItem("user_id") || localStorage.getItem("user_id")!=31){
     window.location.replace("../../index.html")
   }
 

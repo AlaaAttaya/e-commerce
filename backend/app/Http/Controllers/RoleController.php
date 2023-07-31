@@ -27,8 +27,13 @@ class RoleController extends Controller
 
     public function show($id)
     {
-        $role = Role::findOrFail($id);
-        return response()->json($role);
+        $role = Role::where('user_id', $id)->first();
+
+        if ($role) {
+            return response()->json($role);
+        } else {
+            return response()->json(['error' => 'Role not found'], 404);
+        }
     }
 
     public function update(Request $request, $id)
@@ -38,17 +43,27 @@ class RoleController extends Controller
             'title' => 'required|string',
         ]);
 
-        $role = Role::findOrFail($id);
-        $role->update($request->all());
+        $role = Role::where('user_id', $id)->first();
 
+        if (!$role) {
+            return response()->json(['error' => 'Role not found'], 404);
+        }
+    
+        $role->update($request->all());
+    
         return response()->json($role, 200);
     }
 
     public function destroy($id)
     {
-        $role = Role::findOrFail($id);
-        $role->delete();
+        $role = Role::where('user_id', $id)->first();
 
+        if (!$role) {
+            return response()->json(['error' => 'Role not found'], 404);
+        }
+    
+        $role->delete();
+    
         return response()->json(null, 204);
     }
 }
