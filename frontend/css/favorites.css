@@ -10,7 +10,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 300px;
+   width: 240px;
 }
 .left-image {
     float:left;
@@ -22,6 +22,9 @@ a{
     text-decoration: none !important;
     color:rgb(7, 4, 85);
 
+}
+#logout{
+  cursor: pointer;
 }
 a:hover{
   background-color: #146c7b; 

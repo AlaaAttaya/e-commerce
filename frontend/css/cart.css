@@ -10,7 +10,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 300px;
+   width: 240px;
 }
 .left-image {
     float:left;
@@ -209,6 +209,9 @@ a:hover{
     font-size:30px;
     font-weight: bold;
     color:#053138;
+  }
+  #logout{
+    cursor: pointer;
   }
 
   @media screen and (max-width: 1000px) {

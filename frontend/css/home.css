@@ -10,7 +10,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 300px;
+   width: 240px;
 }
 .left-image {
     float:left;
@@ -89,7 +89,9 @@ a:hover{
 
 
 
-
+#logout{
+  cursor: pointer;
+}
 
 
 

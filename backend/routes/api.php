@@ -8,10 +8,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CartController;
 
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | API Routes

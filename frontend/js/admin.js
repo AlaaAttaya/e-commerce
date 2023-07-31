@@ -1,3 +1,7 @@
+if(!localStorage.getItem("user_id")){
+    window.location.replace("../../index.html")
+  }
+
 const addproduct = document.getElementById("add-product-btn");
 const showaddproduct = document.getElementById("show-hide-add");
 const editproduct = document.getElementsByClassName("edit-button");
@@ -122,3 +126,14 @@ document.getElementById('imageInput-edit').addEventListener('change', function(e
    
    
     });
+
+
+
+    ///logout
+
+const logout = document.getElementById('logout')
+logout.addEventListener('click', function () {
+  localStorage.removeItem("user_id")
+
+  window.location.replace('../../index.html')
+})
