@@ -69,7 +69,7 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'favorite'
 ], function ($router) {
-    Route::post('/', [CartController::class, 'index']);
+    Route::post('/', [FavoriteController::class, 'index']);
     Route::post('/store', [FavoriteController::class, 'store']);
     Route::post('/destroy/{id}', [FavoriteController::class, 'destroy']);
 });

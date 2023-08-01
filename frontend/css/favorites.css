@@ -135,7 +135,7 @@ a:hover{
   }
   
   .add-to-cart-btn,
-  .add-to-favorites-btn {
+  .remove-to-favorites-btn {
     background-color:  #146c7b;
     color: #fff;
     border: none;
@@ -147,10 +147,19 @@ a:hover{
   }
   
   .add-to-cart-btn:hover,
-  .add-to-favorites-btn:hover {
+  .remove-to-favorites-btn:hover {
     background-color:  #053138;
   }
   
+  .bg-red{
+    background-color:  #ff1a05;
+  }
+
+  .bg-red:hover{
+    background-color:  #a91407;
+
+  }
+
   .product-price {
     font-size: 14px;
     font-weight: bold;
@@ -162,6 +171,8 @@ a:hover{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
+    margin: 10px;
 }
 
 

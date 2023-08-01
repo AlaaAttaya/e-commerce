@@ -30,6 +30,34 @@ a:hover{
   color:white;
 }
 
+
+#product-quantity{
+  width: 40px;
+  color:red;
+}
+
+#product-price{
+  width: 40px;
+  color:red;
+  border:none;
+}
+
+.bg-red{
+  
+  color: #fff;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+  background-color:  #ff1a05;
+}
+
+.bg-red:hover{
+  background-color:  #a91407;
+
+}
 .padding-left{
     padding-left: 30px;
 }
@@ -160,6 +188,8 @@ a:hover{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
+    margin: 10px;
 }
 
 
