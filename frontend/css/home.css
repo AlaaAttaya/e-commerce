@@ -208,5 +208,7 @@ a:hover{
         font-size: 20px;
         opacity: 0; 
     }
-    
+    .search-bar{
+      flex-wrap: wrap;
+    }
   }
